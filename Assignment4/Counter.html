@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Counter App - By Sikha Kumari.</title>
+    <style>
+      h1 {
+        font-size: 48px;
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      button{
+        background-color: lightgrey;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Counter Application</h1>
+    <h1 id="counter">0</h1>
+    <div style="text-align: center">
+      <button onclick="increment()"> <h3> Increment</h3> </button>
+      <button onclick="decrement()"> <h3> Decrement</h3> </button>
+    </div>
+
+    <script>
+      const counterElement = document.getElementById("counter");
+
+      function increment() {
+        let counterValue = parseInt(counterElement.textContent);
+        if (counterValue < 10) {
+          counterValue++;
+          counterElement.textContent = counterValue;
+          changeColor(counterValue);
+        }
+      }
+
+      function decrement() {
+        let counterValue = parseInt(counterElement.textContent);
+        if (counterValue > 0) {
+          counterValue--;
+          counterElement.textContent = counterValue;
+          changeColor(counterValue);
+        }
+      }
+
+      function changeColor(counterValue) {
+        if (counterValue <= 4) {
+          counterElement.style.color = "green";
+        } else if (counterValue <= 9) {
+          counterElement.style.color = "blue";
+        } else {
+          counterElement.style.color = "red";
+        }
+      }
+    </script>
+  </body>
+</html>
